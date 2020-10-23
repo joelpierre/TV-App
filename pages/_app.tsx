@@ -1,12 +1,13 @@
-import React from 'react';
 import axios from 'axios';
-import AppProvider from '../src/context/AppContext';
-
-import '../styles/global.scss';
-import DefaultLayout from '@layouts/DefaultLayout';
 import { AppProps } from 'next/app';
+import React from 'react';
+
+import DefaultLayout from '@layouts/DefaultLayout';
 import { ITvSchedule } from 'common/types/interfaces';
 import { DEFAULT_COUNTRY, TV_MAZE_API_ROOT } from 'common/utils/constants';
+
+import AppProvider from '../src/context/AppContext';
+import '../styles/global.scss';
 
 interface IAppProps {
   tvSchedule: ITvSchedule[];
