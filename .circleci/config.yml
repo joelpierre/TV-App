@@ -62,16 +62,10 @@ workflows:
 
   Build and test feature branch:
     jobs:
-      - Lint:
-          filters:
-            branches:
-              ignore:
-                - master
-
+      - Lint
       - Test:
           requires:
             - Lint
-
       - Build Feature:
           requires:
             - Test

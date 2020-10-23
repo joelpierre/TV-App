@@ -36,5 +36,4 @@ App.getInitialProps = async ({ ctx, Component }): Promise<Partial<AppProps> & Pa
   };
 };
 
-
 export default App;

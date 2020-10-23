@@ -10,7 +10,7 @@
     "test:watch": "npm run test -- --watch --passWithNoTests",
     "test:coverage": "npm run test -- --coverage --passWithNoTests",
     "ts:check": "tsc --noEmit",
-    "lint": "eslint -p tsconfig.json -c tslint.json",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
     "lint:fix": "tslint -p tsconfig.json -c tslint.common.json --fix"
   },
   "dependencies": {
@@ -82,8 +82,13 @@
       "imagemin-lint-staged"
     ],
     "src/**/*.{ts,tsx}": [
+      "nom run ts:check",
       "npm run lint:fix",
       "npm run test -- --bail --findRelatedTests"
     ]
+  },
+  "engines": {
+    "node": "12.18.4",
+    "npm": "6.14.6"
   }
 }
