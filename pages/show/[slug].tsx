@@ -1,6 +1,7 @@
-import React from 'react';
 import axios, { AxiosResponse } from 'axios';
 import { NextPage } from 'next';
+import React from 'react';
+
 import { ITvShow } from 'common/types/interfaces';
 import { TV_MAZE_API_ROOT } from 'common/utils/constants';
 

@@ -1,6 +1,8 @@
-import React from 'react';
 import { NextPage } from 'next';
+import React from 'react';
+
 import Button from '@atoms/Button';
+
 import { AppContext } from '../src/context/AppContext';
 
 const HomePage: NextPage = () => {

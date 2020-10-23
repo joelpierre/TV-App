@@ -72,7 +72,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "npm run ts:check && lint-staged",
       "pre-push": "npm run ts:check && jest --coverage --coverageReporters=text-summary --passWithNoTests"
     }
   },
@@ -81,7 +81,6 @@
       "imagemin-lint-staged"
     ],
     "src/**/*.{ts,tsx}": [
-      "nom run ts:check",
       "npm run lint:fix",
       "npm run test -- --bail --findRelatedTests"
     ]
