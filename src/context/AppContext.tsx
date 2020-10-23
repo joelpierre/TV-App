@@ -3,6 +3,7 @@ import React, { Dispatch, SetStateAction } from 'react';
 
 import useToggle from '@hooks/useToggle';
 import { APP_TITLE } from 'common/utils/constants';
+import { isClient } from 'common/utils/index';
 
 interface IAppContext {
   appTitle: string;
