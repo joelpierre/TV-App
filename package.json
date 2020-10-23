@@ -15,11 +15,12 @@
   },
   "dependencies": {
     "axios": "0.20.0",
+    "lodash-es": "4.17.15",
     "next": "9.5.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "sass": "1.27.0",
-    "lodash-es": "4.17.15"
+    "save-dev": "0.0.1-security"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "5.11.4",
