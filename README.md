@@ -1,30 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TV Maze App
 
-## Getting Started
+To view a demo visit here https://tv-maze-app.vercel.app
 
-First, run the development server:
+## The setup
+The app uses NextJS, TypeScript (because who doesn't love typescript!?!?) and SCSS
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Getting started
+Install all dependencies - `npm i`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run in dev locally - `npm run dev`
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Run tests locally - `npm run test`
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Run tests in watch mode - `npm run test:watch`
