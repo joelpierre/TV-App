@@ -62,7 +62,7 @@ workflows:
 
   Build and test feature branch:
     jobs:
-      - Lint:
+      - Lint
       - Test:
           requires:
             - Lint
