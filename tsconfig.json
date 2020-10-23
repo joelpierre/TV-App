@@ -1,0 +1,65 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "paths": {
+      "@atoms/*": [
+        "src/components/_atoms/*"
+      ],
+      "@molecules/*": [
+        "src/components/_molecules/*"
+      ],
+      "@organisms/*": [
+        "src/components/_organisms/*"
+      ],
+      "@shared/*": [
+        "src/components/_shared/*"
+      ],
+      "@templates/*": [
+        "src/components/_templates/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "common/types/*": [
+        "src/types/*"
+      ],
+      "common/utils/*": [
+        "src/utils/*"
+      ],
+      "test-utils": [
+        "src/utils/tests"
+      ],
+      "lodash/*": [
+        "node_modules/@types/lodash-es/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,77 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@3.0.0
+
+executors:
+  python_executor:
+    docker:
+      - image: 'circleci/python:3.8.0'
+
+  node_executor:
+    docker:
+      - image: 'circleci/node:12.18-stretch'
+    resource_class: large
+
+commands:
+  node_setup:
+    description: 'Sets up the Python based container with Node.js and NPM, then installs the Node.js application in preparation for running tests, builds and deployments'
+    steps:
+      - node/install:
+          node-version: '12.18.4'
+
+jobs:
+  Lint:
+    description: 'Lints the project'
+    executor: node_executor
+    steps:
+      - checkout
+      - node_setup
+      - node/install-packages:
+          cache-version: 'v2'
+      - run:
+          name: 'Lint the code'
+          command: npm run lint
+
+  Test:
+    description: 'Run the tests'
+    executor: node_executor
+    steps:
+      - checkout
+      - node_setup
+      - node/install-packages:
+          cache-version: 'v2'
+      - run:
+          name: 'Run tests'
+          command: npm test
+
+  Build Feature:
+    description: 'Build the project'
+    executor: python_executor
+    steps:
+      - checkout
+      - node_setup
+      - node/install-packages:
+          cache-version: 'v2'
+      - run:
+          name: 'Build the application'
+          command: npm run build
+
+workflows:
+  version: 2
+
+  Build and test feature branch:
+    jobs:
+      - Lint:
+          filters:
+            branches:
+              ignore:
+                - master
+
+      - Test:
+          requires:
+            - Lint
+
+      - Build Feature:
+          requires:
+            - Test
