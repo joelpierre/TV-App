@@ -11,9 +11,7 @@
     "test:coverage": "npm run test -- --coverage --passWithNoTests",
     "ts:check": "tsc --noEmit",
     "lint": "eslint . --ext .ts",
-    "lint:es:fix": "npm run lint -- --fix",
-    "lint:ts": "tslint -p tsconfig.json -c tslint.json",
-    "lint:fix": "tslint -p tsconfig.json -c tslint.common.json --fix"
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "axios": "0.20.0",
