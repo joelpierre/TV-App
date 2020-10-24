@@ -1,4 +1,4 @@
-export const isClient = () => typeof window !== undefined;
+export const isClient = (): boolean => typeof window !== undefined;
 
 export const sanitizeEncodedChar = (text: string): string => {
   if (text && typeof text === 'string') {
