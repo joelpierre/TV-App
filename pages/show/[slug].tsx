@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import React from 'react';
 
 import { ITvShow } from 'common/types/interfaces';
-import { TV_MAZE_API_ROOT } from 'common/utils/constants';
+import { getHost, getProtocol } from 'common/utils/index';
 
 interface IShowPage {
   tvShow: ITvShow;
@@ -15,11 +15,11 @@ const ShowPage: NextPage<IShowPage> = ({ tvShow }) => (
   </>
 );
 
-ShowPage.getInitialProps = async ({ query }): Promise<IShowPage> => {
+ShowPage.getInitialProps = async ({ query, req }): Promise<IShowPage> => {
   const slug = Array.isArray(query?.slug) ? query?.slug?.[0] : query?.slug;
   try {
     const { data: tvShow }: AxiosResponse<ITvShow> = await axios
-      .get(`${TV_MAZE_API_ROOT}/shows/${slug}?embed=cast`);
+      .get(`${getProtocol()}${getHost(req)}/api/show/${slug}`);
     return {
       tvShow
     };

@@ -4,7 +4,7 @@ import React from 'react';
 
 import DefaultLayout from '@layouts/DefaultLayout';
 import { ITvSchedule } from 'common/types/interfaces';
-import { DEFAULT_COUNTRY, TV_MAZE_API_ROOT } from 'common/utils/constants';
+import { getHost, getProtocol } from 'common/utils/index';
 
 import AppProvider from '../src/context/AppContext';
 import '../styles/global.scss';
@@ -24,11 +24,12 @@ const App = ({ Component, pageProps, tvSchedule }: AppProps & IAppProps) => {
 };
 
 App.getInitialProps = async ({ ctx, Component }): Promise<Partial<AppProps> & Partial<IAppProps>> => {
-  const country = ctx?.query?.country || DEFAULT_COUNTRY;
-  const { data: tvSchedule } = await axios.get(`${TV_MAZE_API_ROOT}/schedule?country=${country}`).catch(e => {
-    console.error(e);
-    return { data: {} };
-  });
+  const { data: tvSchedule } = await axios
+    .get(`${getProtocol()}${getHost(ctx?.req)}/api/schedule`)
+    .catch(e => {
+      console.error(e);
+      return { data: {} };
+    });
   return {
     pageProps: Component.getInitialProps
       ? await Component.getInitialProps(ctx)

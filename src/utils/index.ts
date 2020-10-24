@@ -10,3 +10,7 @@ export const sanitizeEncodedChar = (text: string): string => {
   }
   return String(text);
 };
+
+export const getProtocol = (): string => process.env?.NODE_ENV === 'production' ? 'https://' : 'http://';
+
+export const getHost = (req): string => req?.headers?.host;
