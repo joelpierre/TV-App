@@ -17,4 +17,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.statusCode = 404;
     res.end(JSON.stringify({}));
   }
-}
+};
