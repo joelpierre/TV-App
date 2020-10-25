@@ -1,13 +1,11 @@
 import { AppProps } from 'next/app';
 import React from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 import DefaultLayout from '@layouts/DefaultLayout';
 import { ITvSchedule } from 'common/types/interfaces';
-
-import AppProvider from '../src/context/AppContext';
 import '../styles/global.scss';
-import { AnimatePresence } from 'framer-motion';
-import { fetchSchedule } from '../src/fetch';
+import ScheduleProvider from '../src/context/ScheduleContext';
 
 interface IAppProps {
   tvSchedule: ITvSchedule[];
@@ -19,7 +17,7 @@ const App = ({ Component, pageProps, tvSchedule, router }: AppProps & IAppProps)
   }, [router.asPath]);
 
   return (
-    <AppProvider tvSchedule={tvSchedule}>
+    <ScheduleProvider>
       <AnimatePresence exitBeforeEnter={true}>
         <React.Fragment key={router.asPath}>
           <DefaultLayout>
@@ -27,20 +25,8 @@ const App = ({ Component, pageProps, tvSchedule, router }: AppProps & IAppProps)
           </DefaultLayout>
         </React.Fragment>
       </AnimatePresence>
-    </AppProvider>
+    </ScheduleProvider>
   );
-};
-
-App.getInitialProps = async ({ ctx, Component }): Promise<Partial<AppProps> & Partial<IAppProps>> => {
-  const page = ctx?.query?.page as string || '1';
-  const tvSchedule = await fetchSchedule(page);
-
-  return {
-    pageProps: Component.getInitialProps
-      ? await Component.getInitialProps(ctx)
-      : {},
-    tvSchedule
-  };
 };
 
 export default App;

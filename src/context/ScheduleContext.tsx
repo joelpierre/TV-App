@@ -5,26 +5,25 @@ import { ITvSchedule } from 'common/types/interfaces';
 import { fetchSchedule } from '../fetch';
 import usePage from '@hooks/usePage';
 
-interface IAppContext {
+interface IScheduleContext {
   appTitle: string;
   tvSchedule: ITvSchedule[];
   setTvSchedule: Dispatch<SetStateAction<any>>;
 }
 
-const defaultValues: IAppContext = {
+const defaultValues: IScheduleContext = {
   appTitle: APP_TITLE,
   tvSchedule: [] as ITvSchedule[],
   setTvSchedule: noop
 };
 
-export const AppContext = React.createContext<IAppContext>(defaultValues);
+export const ScheduleContext = React.createContext<IScheduleContext>(defaultValues);
 
-const AppProvider: React.FunctionComponent<Pick<IAppContext, 'tvSchedule'>> = ({
-  children,
-  tvSchedule: schedule = defaultValues.tvSchedule
+const ScheduleProvider: React.FunctionComponent = ({
+  children
 }) => {
   const { page } = usePage();
-  const [tvSchedule, setTvSchedule] = React.useState<ITvSchedule[]>(schedule);
+  const [tvSchedule, setTvSchedule] = React.useState<ITvSchedule[]>(defaultValues.tvSchedule);
 
   const asyncGetTvSchedule = async (currentPage: string) => {
     setTvSchedule(await fetchSchedule(currentPage));
@@ -39,7 +38,7 @@ const AppProvider: React.FunctionComponent<Pick<IAppContext, 'tvSchedule'>> = ({
   };
 
   return (
-    <AppContext.Provider
+    <ScheduleContext.Provider
       value={{
         ...defaultValues,
         tvSchedule,
@@ -47,8 +46,8 @@ const AppProvider: React.FunctionComponent<Pick<IAppContext, 'tvSchedule'>> = ({
       }}
     >
       {children}
-    </AppContext.Provider>
+    </ScheduleContext.Provider>
   );
 };
 
-export default AppProvider;
+export default ScheduleProvider;

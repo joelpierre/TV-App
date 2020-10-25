@@ -1,0 +1,9 @@
+.Loading {
+  width: 100%;
+  padding: spacing(10) 0;
+  text-align: center;
+
+  &__container {
+    @include max-width-container;
+  }
+}

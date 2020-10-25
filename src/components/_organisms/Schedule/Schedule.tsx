@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './Schedule.module.scss';
 import ShowCard from '@molecules/ShowCard';
-import { AppContext } from '../../../context/AppContext';
+import { ScheduleContext } from '../../../context/ScheduleContext';
 import { getDateFromPage } from 'common/utils/index';
 import usePage from '@hooks/usePage';
 
@@ -15,7 +15,7 @@ const Schedule: React.FunctionComponent<IScheduleProps> = ({
   className,
   isFirstPage = true
 }) => {
-  const { tvSchedule } = React.useContext(AppContext);
+  const { tvSchedule } = React.useContext(ScheduleContext);
   const { page } = usePage();
   const { date } = getDateFromPage(page);
 
