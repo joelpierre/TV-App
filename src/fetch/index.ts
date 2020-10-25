@@ -1,8 +1,8 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { getUrlRoot } from 'common/utils/index';
 import { ITvSchedule, ITvShow } from 'common/types/interfaces';
 
-export const fetchSchedule = async (page = '1'): Promise<ITvSchedule[]> => {
+export const fetchSchedule = async (page = '0'): Promise<ITvSchedule[]> => {
   const { data: tvSchedule } = await axios
     .get(`${getUrlRoot}api/schedule?page=${page}`)
     .catch(e => {
