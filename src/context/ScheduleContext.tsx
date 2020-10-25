@@ -19,11 +19,12 @@ const defaultValues: IScheduleContext = {
 
 export const ScheduleContext = React.createContext<IScheduleContext>(defaultValues);
 
-const ScheduleProvider: React.FunctionComponent = ({
-  children
+const ScheduleProvider: React.FunctionComponent<Partial<Pick<IScheduleContext, 'tvSchedule'>>> = ({
+  children,
+  tvSchedule: schedule = []
 }) => {
   const { page } = usePage();
-  const [tvSchedule, setTvSchedule] = React.useState<ITvSchedule[]>(defaultValues.tvSchedule);
+  const [tvSchedule, setTvSchedule] = React.useState<ITvSchedule[]>(schedule);
 
   const asyncGetTvSchedule = async (currentPage: string) => {
     setTvSchedule(await fetchSchedule(currentPage));

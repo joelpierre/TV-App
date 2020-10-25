@@ -4,7 +4,7 @@ import Home from '@templates/Home';
 import PageHandler from '@shared/PageHandler';
 import { EPageType } from 'common/types/enums';
 import { fetchSchedule } from '../src/fetch';
-import { ScheduleContext } from '../src/context/ScheduleContext';
+import ScheduleProvider from '../src/context/ScheduleContext';
 import { ITvSchedule } from 'common/types/interfaces';
 
 interface IHomePageProps {
@@ -12,15 +12,14 @@ interface IHomePageProps {
 }
 
 const HomePage: NextPage<IHomePageProps> = ({ tvSchedule }) => {
-  const { setTvSchedule } = React.useContext(ScheduleContext);
-  setTvSchedule(tvSchedule);
-
   return (
-    <PageHandler
-      title="Schedule"
-      Template={Home}
-      pageType={EPageType.Home}
-    />
+    <ScheduleProvider tvSchedule={tvSchedule}>
+      <PageHandler
+        title="Schedule"
+        Template={Home}
+        pageType={EPageType.Home}
+      />
+    </ScheduleProvider>
   );
 };
 
