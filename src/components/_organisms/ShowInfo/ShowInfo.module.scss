@@ -2,8 +2,12 @@
   $root: &;
   width: 100%;
   position: relative;
-  padding: spacing(12) 0;
+  padding: spacing(6) 0;
   overflow: hidden;
+
+  @include breakpoint('md') {
+    padding: spacing(12) 0;
+  }
 
   &__container {
     @include max-width-container;
@@ -18,17 +22,32 @@
   &__heading {
     font-size: 30px;
     font-family: $font-regular;
-    margin-bottom: spacing(7);
+    margin-bottom: spacing(5);
+
+    @include breakpoint('md') {
+      margin-bottom: spacing(7);
+    }
   }
 
   &__details,
   &__cast {
     width: 100%;
-    margin-bottom: spacing(8);
+    margin-bottom: spacing(5);
 
     @include breakpoint('md') {
       width: 50%;
+      margin-bottom: 0;
     }
+  }
+
+  &__details {
+    @include breakpoint('md') {
+      padding-right: spacing(6);
+    }
+  }
+
+  &__cast {
+    margin-bottom: 0;
   }
 
   &__table {
@@ -42,38 +61,50 @@
 
     &-row {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: spacing(3) 0;
-      margin: 0;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 0;
       width: 50%;
       flex-wrap: wrap;
+      flex-direction: column;
+      margin: 0 0 spacing(3);
+
+      @include breakpoint('sm') {
+        margin-bottom: 0;
+        height: 100px;
+      }
 
       @include breakpoint('md') {
+        border-bottom: 1px solid $color-brand;
         flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
         width: 100%;
-
-        &:first-of-type {
-          padding-top: 0;
-        }
-
-        &:last-of-type {
-          padding-bottom: 0;
-        }
+        flex-direction: row;
       }
     }
 
     &-cell {
       width: 100%;
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      font-family: $font-light;
+
       @include breakpoint('md') {
         padding: 0 spacing(2);
       }
     }
 
     &-cell--image {
-      max-width: 90px;
+      max-width: 58px;
 
       @include breakpoint('md') {
+        max-width: 74px;
+      }
+
+      @include breakpoint('md') {
+        max-width: 90px;
         margin-right: spacing(6);
         overflow: hidden;
       }
@@ -93,6 +124,14 @@
       &__table-row {
         width: 100%;
         flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        height: 80px;
+        margin-bottom: 0;
+
+        @include breakpoint('sm') {
+          height: 100px;
+        }
 
         @include breakpoint('md') {
           width: 100%;
@@ -114,7 +153,7 @@
 
       &__real-name {
         font-weight: normal;
-        font-family: $font-regular;
+        font-family: $font-light;
         display: block;
 
         @include breakpoint('md') {

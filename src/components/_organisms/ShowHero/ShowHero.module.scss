@@ -1,7 +1,7 @@
 .ShowHero {
   position: relative;
   min-height: 260px;
-  padding: spacing(8) 0;
+  padding: spacing(8) 0 spacing(3);
 
   &::after {
     position: absolute;
@@ -80,9 +80,9 @@
     @include type-heading-1;
     margin-bottom: spacing(7);
     color: $color-tint-alpha;
-    font-size: 28px;
     line-height: 1;
     width: 100%;
+    font-size: 30px;
   }
 
   &__ratings {
@@ -92,26 +92,47 @@
   }
 
   &__show-title {
-    font-size: 50px;
     width: 100%;
     margin-bottom: spacing(4);
     color: $color-tint-alpha;
     font-family: $font-regular;
+    font-size: 20px;
+
+    @include breakpoint('sm') {
+      font-size: 30px;
+    }
+
+    @include breakpoint('md') {
+      font-size: 50px;
+    }
   }
 
   &__copy {
     $clamp: 2;
-    font-size: 20px;
+    $maxLineHeight: 1.5 * 2;
     line-height: 1.5;
+    font-size: 16px;
     color: $color-tint-alpha;
 
+    overflow: hidden;
+
     &--is-clamped {
-      display: box;
-      overflow: hidden;
-      -webkit-box-orient: vertical;
-      display: -webkit-box;
-      line-clamp: $clamp;
-      -webkit-line-clamp: $clamp;
+      max-height: 16px * $maxLineHeight;
+
+      @include breakpoint('sm') {
+        max-height: 18px * $maxLineHeight;
+      }
+
+      @include breakpoint('md') {
+        max-height: 20px * $maxLineHeight;
+      }
+
+      @supports (-webkit-line-clamp: $clamp) {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $clamp;
+        overflow: hidden;
+      }
     }
   }
 
@@ -123,7 +144,6 @@
     background-color: transparent;
     text-align: left;
     color: $color-tint-alpha;
-    font-size: 20px;
     margin-top: spacing(2);
     font-family: $font-semibold;
     text-decoration: underline;
@@ -131,6 +151,19 @@
 
     @include hover-focus {
       text-decoration: none;
+    }
+  }
+
+  &__read-more,
+  &__copy {
+    font-size: 16px;
+
+    @include breakpoint('sm') {
+      font-size: 18px;
+    }
+
+    @include breakpoint('md') {
+      font-size: 20px;
     }
   }
 }

@@ -21,6 +21,12 @@
 
   &__cta {
     position: relative;
-    margin: 0 spacing(2);
+    margin-bottom: spacing(2);
+    width: 100%;
+
+    @include breakpoint('md') {
+      margin: 0 spacing(2) 0;
+      width: auto;
+    }
   }
 }

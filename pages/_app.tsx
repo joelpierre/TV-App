@@ -14,7 +14,7 @@ interface IAppProps {
 }
 
 const App = ({ Component, pageProps, tvSchedule, router }: AppProps & IAppProps) => {
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [router.asPath]);
 

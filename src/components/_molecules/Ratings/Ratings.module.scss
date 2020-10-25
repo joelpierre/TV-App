@@ -1,8 +1,5 @@
 .Ratings {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-decoration: none;
+  width: 100%;
 
   &__star {
     margin-right: (spacing(0.5) / 2);

@@ -55,7 +55,7 @@ const ShowInfo: React.FunctionComponent<IShowInfoProps> = ({
     },
     {
       heading: 'Genres',
-      content: genres.join(',')
+      content: genres.join(', ')
     }
   ];
 
@@ -88,7 +88,7 @@ const ShowInfo: React.FunctionComponent<IShowInfoProps> = ({
         </div>
 
         <div className={styles.ShowInfo__cast}>
-          <h2 className={styles.ShowInfo__heading}>
+          <h2 className={`${styles.ShowInfo__heading} ${styles['ShowInfo__heading--cast']}`}>
             Starring
           </h2>
 

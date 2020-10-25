@@ -39,10 +39,6 @@ const ShowCard: React.FunctionComponent<IShowCardProps> = ({
         </p>
 
         <p className={styles.ShowCard__meta}>
-          Date: {formattedDate}
-        </p>
-
-        <p className={styles.ShowCard__meta}>
           Network: {network?.name}
         </p>
 

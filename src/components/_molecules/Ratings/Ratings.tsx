@@ -28,7 +28,7 @@ const Ratings: React.FunctionComponent<IRatingsProps> = ({
 
       {withFigures && (
         <span className={styles.Ratings__figures}>
-          {ratingOutOfFive === 0 ? '(no rating)' : `${ratingOutOfFive}/5`}
+          {ratingOutOfFive === 0 ? '(no rating)' : `${ratingOutOfFive.toFixed(1)}/5`}
         </span>
       )}
     </div>

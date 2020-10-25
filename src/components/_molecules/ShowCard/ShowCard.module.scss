@@ -19,7 +19,12 @@
   &__heading {
     font-family: $font-medium;
     font-size: 16px;
+    margin-top: spacing(1.5);
     margin-bottom: spacing(1.5);
+
+    @include breakpoint('sm') {
+      margin-top: 0;
+    }
   }
 
   &__meta {
@@ -38,5 +43,14 @@
   &__ratings {
     margin-top: spacing(2);
     margin-bottom: spacing();
+  }
+
+  &__ratings,
+  &__meta {
+    display: none;
+
+    @include breakpoint('sm') {
+      display: block;
+    }
   }
 }
