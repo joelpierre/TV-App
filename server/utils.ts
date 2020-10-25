@@ -6,7 +6,6 @@ export const runServerMiddleware = (req: NextApiRequest, res: NextApiResponse, f
       if (result instanceof Error) {
         return reject(result);
       }
-
       return resolve(result);
     });
   });

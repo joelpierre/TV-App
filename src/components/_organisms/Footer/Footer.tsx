@@ -12,7 +12,13 @@ const Footer: React.FunctionComponent<IFooterProps> = ({
 }) => {
   return (
     <footer className={classNames(styles.Footer, className)}>
-      This is the footer
+      <div className={styles.Footer__container}>
+        <p className={styles.Footer__copy}>
+          Created by Joel Pierre, {new Date().getFullYear()} |
+          <a className={styles.Footer__link}
+            href="https://github.com/joelpierre">https://github.com/joelpierre</a>
+        </p>
+      </div>
     </footer>
   );
 };

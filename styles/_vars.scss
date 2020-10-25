@@ -1,0 +1,74 @@
+// Grid
+$space-base: 8px;
+
+$max-container-width: 1120px;
+$max-site-width: 1440px;
+
+// Fonts
+$font-light: "SF UI Text Light", sans-serif;
+$font-regular: "SF UI Text Regular", sans-serif;
+$font-medium: "SF UI Text Medium", sans-serif;
+$font-semibold: "SF UI Text Semibold", sans-serif;
+$font-bold: "SF UI Text Bold", sans-serif;
+$font-heavy: "SF UI Text Heavy", sans-serif;
+
+$font-default: $font-regular;
+$font-heading: $font-bold;
+$font-monospace: monospace, monoszpace;
+
+$font-size-heading-1: 4.8rem;
+$font-size-heading-2: 3.4rem;
+$font-size-heading-3: 2.6rem;
+$font-size-heading-4: 2rem;
+$font-size-heading-5: 1rem;
+$font-size-heading-6: 1.4rem;
+$font-size-body: 1rem;
+
+$headings-margin-bottom: 2rem;
+$paragraph-margin-bottom: 2rem;
+$list-margin-bottom: 2rem;
+$label-margin-bottom: 1rem;
+
+$table-cell-padding: 1rem;
+
+$font-weight-base: normal;
+
+$line-height-base: 1.25;
+
+// Colors
+$color-brand: #3C948B;
+$color-alpha: #1F4B47;
+$color-beta: #f0f9f8;
+
+// Tint Colours
+$color-tint-alpha: #FFFFFF;
+$color-tint-beta: #f1f1f1;
+$color-tint-gamma: #C9C9C9;
+$color-tint-psi: #3F3F3F;
+$color-tint-omega: #000000;
+
+// All Colors
+$colors: (
+  brand: $color-brand,
+  alpha: $color-alpha,
+  beta: $color-beta,
+  tint-alpha: $color-tint-alpha,
+  tint-beta: $color-tint-beta,
+  tint-gamma: $color-tint-gamma,
+  tint-psi: $color-tint-psi,
+  tint-omega: $color-tint-omega,
+);
+
+$sizes: (
+  xs: 'xs',
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+  xl: 'xl',
+);
+
+$link-hover-color: $color-brand;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+$table-caption-color: $color-tint-psi;

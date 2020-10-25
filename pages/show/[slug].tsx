@@ -3,7 +3,10 @@ import { NextPage } from 'next';
 import React from 'react';
 
 import { ITvShow } from 'common/types/interfaces';
-import { getHost, getProtocol } from 'common/utils/index';
+import { getUrlRoot } from 'common/utils/index';
+import PageHandler from '@shared/PageHandler';
+import Show from '@templates/Show';
+import { EPageType } from 'common/types/enums';
 
 interface IShowPage {
   tvShow: ITvShow;
@@ -11,15 +14,20 @@ interface IShowPage {
 
 const ShowPage: NextPage<IShowPage> = ({ tvShow }) => (
   <>
-    Show Page for {tvShow?.name}
+    <PageHandler
+      Template={Show}
+      templateProps={tvShow}
+      title={tvShow.name}
+      pageType={EPageType.Show}
+    />
   </>
 );
 
-ShowPage.getInitialProps = async ({ query, req }): Promise<IShowPage> => {
+ShowPage.getInitialProps = async ({ query }): Promise<IShowPage> => {
   const slug = Array.isArray(query?.slug) ? query?.slug?.[0] : query?.slug;
   try {
     const { data: tvShow }: AxiosResponse<ITvShow> = await axios
-      .get(`${getProtocol()}${getHost(req)}/api/show/${slug}`);
+      .get(`${getUrlRoot}api/show/${slug}`);
     return {
       tvShow
     };

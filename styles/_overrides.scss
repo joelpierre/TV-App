@@ -1,0 +1,11 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: $color-tint-alpha;
+  font-family: $font-default;
+  font-size: 100%;
+  color: $color-tint-psi;
+  touch-action: manipulation;
+}

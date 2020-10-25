@@ -2,17 +2,29 @@ import classNames from 'classnames';
 import React from 'react';
 
 import styles from './Header.module.scss';
+import Anchor from '@atoms/Anchor';
+import { EPageHref } from 'common/types/enums';
 
-interface IHeaderProps {
+interface IFooterProps {
   className?: string;
 }
 
-const Header: React.FunctionComponent<IHeaderProps> = ({
+const Header: React.FunctionComponent<IFooterProps> = ({
   className
 }) => {
   return (
     <header className={classNames(styles.Header, className)}>
-      This is the header
+      <div className={styles.Header__container}>
+        <Anchor href={EPageHref.Home} as="/">
+          <img
+            className={styles.Header__logo}
+            src="/images/tvm-header-logo.png"
+            alt="Logo for TV Maze"
+            width="200"
+            loading="lazy"
+          />
+        </Anchor>
+      </div>
     </header>
   );
 };

@@ -1,3 +1,31 @@
 .Footer {
+  width: 100%;
+  background-color: $color-tint-psi;
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
+  position: relative;
+  z-index: 100;
 
+  &__container {
+    @include max-width-container;
+  }
+
+  &__content {
+    text-align: left;
+  }
+
+  &__copy {
+    font-size: 14px;
+    color: $color-tint-alpha;
+  }
+
+  &__link {
+    color: $color-tint-alpha;
+    text-decoration: underline;
+
+    @include hover-focus {
+      color: $color-tint-alpha;
+      text-decoration: none;
+    }
+  }
 }

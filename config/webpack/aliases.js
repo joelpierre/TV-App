@@ -1,7 +1,7 @@
 const path = require("path");
 
 const aliases = {
-  "sass": path.resolve(__dirname, "../../src/assets/sass"),
+  "sass": path.resolve(__dirname, "../../styles"),
   "@atoms": path.resolve(__dirname, "../../src/components/_atoms"),
   "@molecules": path.resolve(__dirname, "../../src/components/_molecules"),
   "@organisms": path.resolve(__dirname, "../../src/components/_organisms"),

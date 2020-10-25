@@ -14,10 +14,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       throw new Error;
     }
     const { data } = await axios.get(`${TV_MAZE_API_ROOT}/shows/${slug}?embed=cast`);
-    res.statusCode = 200;
-    res.end(JSON.stringify(data));
+    res.status(200).json(data);
   } catch (error) {
-    res.statusCode = 404;
-    res.end(JSON.stringify(error));
+    res.status(404).json(error);
   }
 };

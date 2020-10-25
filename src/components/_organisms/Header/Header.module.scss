@@ -1,3 +1,16 @@
 .Header {
+  width: 100%;
+  position: relative;
+  background-color: $color-tint-psi;
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
+  z-index: 100;
 
+  &__container {
+    @include max-width-container;
+  }
+
+  &__logo {
+    max-width: 150px;
+  }
 }

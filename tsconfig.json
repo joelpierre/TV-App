@@ -60,6 +60,10 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "next.config.js",
+    "postcss.config.js",
+    ".next",
+    "src/**/__mocks__/*"
   ]
 }

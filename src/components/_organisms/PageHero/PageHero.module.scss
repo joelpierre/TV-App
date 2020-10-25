@@ -1,0 +1,53 @@
+.PageHero {
+  position: relative;
+  min-height: 260px;
+  padding: spacing(4) 0;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    background-color: $color-brand;
+  }
+
+  @include breakpoint('sm') {
+    height: 430px;
+    padding: spacing(12) 0;
+
+    &::after {
+      height: 580px;
+    }
+  }
+
+  &__container {
+    @include max-width-container;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    @include type-heading-1;
+    margin-bottom: spacing(4);
+    color: $color-tint-alpha;
+    font-size: 30px;
+  }
+
+  &__copy {
+    font-size: 30px;
+    color: $color-tint-beta;
+  }
+
+  &__heading,
+  &__copy {
+    @include breakpoint('sm') {
+      max-width: 80%;
+    }
+  }
+}

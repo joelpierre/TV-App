@@ -1,0 +1,6 @@
+@mixin max-width-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1274px;
+  padding: 0 spacing(2);
+}

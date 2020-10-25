@@ -1,0 +1,127 @@
+.ShowInfo {
+  $root: &;
+  width: 100%;
+  position: relative;
+  padding: spacing(12) 0;
+  overflow: hidden;
+
+  &__container {
+    @include max-width-container;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint('md') {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__heading {
+    font-size: 30px;
+    font-family: $font-regular;
+    margin-bottom: spacing(7);
+  }
+
+  &__details,
+  &__cast {
+    width: 100%;
+    margin-bottom: spacing(8);
+
+    @include breakpoint('md') {
+      width: 50%;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    font-size: 20px;
+
+    &-body {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: spacing(3) 0;
+      margin: 0;
+      width: 50%;
+      flex-wrap: wrap;
+
+      @include breakpoint('md') {
+        flex-wrap: nowrap;
+        width: 100%;
+
+        &:first-of-type {
+          padding-top: 0;
+        }
+
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    &-cell {
+      width: 100%;
+      @include breakpoint('md') {
+        padding: 0 spacing(2);
+      }
+    }
+
+    &-cell--image {
+      max-width: 90px;
+
+      @include breakpoint('md') {
+        margin-right: spacing(6);
+        overflow: hidden;
+      }
+    }
+
+    &-heading {
+      width: 100%;
+
+      @include breakpoint('md') {
+        max-width: 214px; // From Sketch File
+      }
+    }
+  }
+
+  &__table-body--cast {
+    #{$root} {
+      &__table-row {
+        width: 100%;
+        flex-wrap: nowrap;
+
+        @include breakpoint('md') {
+          width: 100%;
+          align-items: center;
+          justify-content: flex-start;
+        }
+      }
+
+      &__table-heading {
+        width: 100%;
+        margin-left: spacing(3);
+
+        @include breakpoint('md') {
+          display: flex;
+          margin-left: 0;
+          max-width: none;
+        }
+      }
+
+      &__real-name {
+        font-weight: normal;
+        font-family: $font-regular;
+        display: block;
+
+        @include breakpoint('md') {
+          margin-left: auto;
+          display: inline;
+        }
+      }
+    }
+  }
+}

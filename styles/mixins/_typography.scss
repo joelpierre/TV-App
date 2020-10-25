@@ -1,0 +1,43 @@
+@mixin font-regular {
+  font-weight: 400;
+}
+
+@mixin font-bold {
+  font-weight: 500;
+}
+
+@mixin type-heading-1-bold {
+  font-size: 45px;
+  font-family: $font-heading;
+  @include font-bold;
+}
+
+@mixin type-heading-1 {
+  font-size: 40px;
+  font-family: $font-heading;
+}
+
+@mixin type-heading-2 {
+  font-size: 35px;
+  font-family: $font-heading;
+}
+
+@mixin type-heading-3 {
+  font-size: 30px;
+  font-family: $font-heading;
+}
+
+@mixin type-heading-4 {
+  font-size: 20px;
+  font-family: $font-heading;
+}
+
+@mixin type-heading-5 {
+  font-size: 16px;
+  font-family: $font-heading;
+}
+
+@mixin type-heading-6 {
+  font-size: 14px;
+  font-family: $font-heading;
+}

@@ -5,14 +5,16 @@ import styles from './Button.module.scss';
 
 interface IButtonProps {
   className?: string;
+  onClick?: (event: React.MouseEvent) => void;
 }
 
 const Button: React.FunctionComponent<IButtonProps> = ({
   className,
-  children
+  children,
+  onClick
 }) => {
   return (
-    <button data-testid="Button" className={classNames(styles.Button, className)}>
+    <button onClick={onClick} data-testid="Button" className={classNames(styles.Button, className)}>
       {children}
     </button>
   );

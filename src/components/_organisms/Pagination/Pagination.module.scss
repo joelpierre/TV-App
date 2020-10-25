@@ -1,0 +1,26 @@
+.Pagination {
+  width: 100%;
+  position: relative;
+  padding: 0 0 spacing(8);
+
+  &__container {
+    @include max-width-container;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  &__nav,
+  &__today {
+    width: 100%;
+  }
+
+  &__today {
+    margin-bottom: spacing(3);
+  }
+
+  &__cta {
+    position: relative;
+    margin: 0 spacing(2);
+  }
+}

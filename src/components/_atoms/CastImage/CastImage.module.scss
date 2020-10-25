@@ -1,0 +1,25 @@
+.CastImage {
+  position: relative;
+  width: 100%;
+  border-radius: 50%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  background-color: $color-tint-gamma;
+
+  &--no-image {
+    &::after {
+      @include center-xy;
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $color-tint-alpha;
+    }
+  }
+
+  &__image {
+    @include center-xy;
+    width: 100%;
+    height: auto;
+  }
+}

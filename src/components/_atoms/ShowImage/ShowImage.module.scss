@@ -1,0 +1,24 @@
+.ShowImage {
+  position: relative;
+  width: 100%;
+  padding-bottom: 150%;
+  overflow: hidden;
+  background-color: $color-tint-gamma;
+
+  &--no-image {
+    &::after {
+      @include center-xy;
+      content: '';
+      width: 36px;
+      height: 36px;
+      border-radius: spacing();
+      background-color: $color-tint-alpha;
+    }
+  }
+
+  &__image {
+    @include center-xy;
+    height: 100%;
+    width: auto;
+  }
+}

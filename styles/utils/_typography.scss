@@ -1,0 +1,40 @@
+h1, h2, h3, h4, h5, h6 {
+  @include font-regular;
+  font-family: $font-heading;
+  line-height: 1.25;
+  margin: 0;
+}
+
+h1 {
+  @include type-heading-1;
+  color: $color-tint-omega;
+}
+
+h2 {
+  @include type-heading-2;
+  color: $color-tint-omega;
+}
+
+h3 {
+  @include type-heading-3;
+}
+
+h4 {
+  @include type-heading-4;
+}
+
+h5 {
+  @include type-heading-5;
+}
+
+h6 {
+  @include type-heading-6;
+}
+
+a {
+  color: $color-tint-omega;
+
+  &:hover {
+    color: $color-tint-omega;
+  }
+}

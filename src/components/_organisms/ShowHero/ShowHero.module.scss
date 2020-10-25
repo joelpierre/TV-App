@@ -1,0 +1,136 @@
+.ShowHero {
+  position: relative;
+  min-height: 260px;
+  padding: spacing(8) 0;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    background-color: $color-brand;
+  }
+
+  @include breakpoint('sm') {
+    height: 580px;
+    padding: spacing(10) 0;
+  }
+
+  &--is-fluid {
+    @include breakpoint('sm') {
+      height: auto;
+    }
+  }
+
+  &__container {
+    @include max-width-container;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    width: 100%;
+    margin-bottom: spacing(5);
+    flex-direction: column;
+
+    @include breakpoint('sm') {
+      flex-direction: row;
+    }
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    @include breakpoint('sm') {
+      max-width: 272px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: spacing(4);
+
+    @include breakpoint('sm') {
+      width: 60%;
+      padding-left: spacing(6);
+    }
+  }
+
+  &__link {
+    margin-top: -#{spacing(3)};
+    margin-bottom: spacing(5);
+    color: $color-tint-alpha;
+    text-decoration: none;
+    padding-left: 0;
+    transition: padding-left .4s;
+
+    @include hover-focus {
+      text-decoration: none;
+      color: $color-tint-alpha;
+      padding-left: spacing();
+    }
+  }
+
+  &__heading {
+    @include type-heading-1;
+    margin-bottom: spacing(7);
+    color: $color-tint-alpha;
+    font-size: 28px;
+    line-height: 1;
+    width: 100%;
+  }
+
+  &__ratings {
+    margin-bottom: spacing(4);
+    color: $color-tint-alpha;
+    font-size: 20px;
+  }
+
+  &__show-title {
+    font-size: 50px;
+    width: 100%;
+    margin-bottom: spacing(4);
+    color: $color-tint-alpha;
+    font-family: $font-regular;
+  }
+
+  &__copy {
+    $clamp: 2;
+    font-size: 20px;
+    line-height: 1.5;
+    color: $color-tint-alpha;
+
+    &--is-clamped {
+      display: box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      line-clamp: $clamp;
+      -webkit-line-clamp: $clamp;
+    }
+  }
+
+  &__read-more {
+    width: 140px;
+    display: inline;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    color: $color-tint-alpha;
+    font-size: 20px;
+    margin-top: spacing(2);
+    font-family: $font-semibold;
+    text-decoration: underline;
+    cursor: pointer;
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+  }
+}

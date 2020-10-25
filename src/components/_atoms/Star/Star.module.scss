@@ -1,0 +1,15 @@
+.Star {
+  position: relative;
+  font-size: inherit;
+
+  &::before {
+    content: '\2605';
+    color: $color-tint-gamma;
+  }
+
+  &--is-active {
+    &::before {
+      color: gold;
+    }
+  }
+}

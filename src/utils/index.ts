@@ -1,16 +1,22 @@
-export const isClient = (): boolean => typeof window !== undefined;
+export const isClient = (): boolean => typeof window !== 'undefined';
 
-export const sanitizeEncodedChar = (text: string): string => {
-  if (text && typeof text === 'string') {
-    return text.replace(
-      /&#(?:x([\da-f]+)|(\d+));/gi,
-      (_, hex: string, dec: number): string =>
-        String.fromCharCode(dec || +('0x' + hex))
-    );
-  }
-  return String(text);
+export const getUrlRoot = process?.env?.NODE_ENV === 'production'
+  ? 'https://tv-maze-app.vercel.app/'
+  : 'http://localhost:3000/';
+
+interface IDateFromPage {
+  isoDate: string | undefined;
+  date: string
+}
+
+export const getDateFromPage = (pageFromQuery: string): IDateFromPage => {
+  const page = parseInt(pageFromQuery, 10) || 0;
+  const today = new Date();
+  const date = (page === 0
+    ? today
+    : new Date(today.setDate(today.getDate() + page)));
+  return {
+    isoDate: date ? date.toISOString().split('T')[0] : undefined,
+    date: date?.toDateString()
+  };
 };
-
-export const getProtocol = (): string => process.env?.NODE_ENV === 'production' ? 'https://' : 'http://';
-
-export const getHost = (req): string => req?.headers?.host;

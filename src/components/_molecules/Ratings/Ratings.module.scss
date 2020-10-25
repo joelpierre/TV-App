@@ -1,0 +1,16 @@
+.Ratings {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+
+  &__star {
+    margin-right: (spacing(0.5) / 2);
+  }
+
+  &__figures {
+    margin-left: spacing();
+    font-family: $font-bold;
+    color: inherit;
+  }
+}

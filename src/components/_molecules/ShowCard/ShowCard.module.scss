@@ -1,3 +1,42 @@
 .ShowCard {
+  $root: &;
   width: 100%;
+  background-color: $color-tint-alpha;
+
+  @include hover-focus {
+    text-decoration: none;
+
+    #{$root}__heading {
+      text-decoration: underline;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__heading {
+    font-family: $font-medium;
+    font-size: 16px;
+    margin-bottom: spacing(1.5);
+  }
+
+  &__meta {
+    font-size: 14px;
+    margin-bottom: spacing(0.5);
+
+    &:last-of-type {
+      margin-bottom: spacing(0.5);
+    }
+  }
+
+  &__meta-time {
+    font-size: 12px;
+  }
+
+  &__ratings {
+    margin-top: spacing(2);
+    margin-bottom: spacing();
+  }
 }

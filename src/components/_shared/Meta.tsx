@@ -2,10 +2,9 @@ import Head from 'next/head';
 import React, { FunctionComponent } from 'react';
 
 import { APP_KEYWORDS, APP_TITLE, SITE_AUTHOR, SITE_DESCRIPTION } from 'common/utils/constants';
-import { sanitizeEncodedChar } from 'common/utils/index';
 
 interface IMetaProps {
-  title?: string;
+  title: string;
   description?: string;
   meta?: Partial<IMetaTag>[];
   keywords?: string[];
@@ -26,9 +25,7 @@ const Meta: FunctionComponent<IMetaProps> = ({
   ogType = 'website'
 }) => {
   const metaDescription = description || SITE_DESCRIPTION;
-  const pageTitle = title
-    ? sanitizeEncodedChar(title)
-    : sanitizeEncodedChar(APP_TITLE);
+  const pageTitle = title;
   const defaultKeywordsMetaTag: IMetaTag = {
     id: 'keywords',
     name: 'keywords',
@@ -85,7 +82,7 @@ const Meta: FunctionComponent<IMetaProps> = ({
 
   return (
     <Head>
-      <title>{`${pageTitle} | Joel Pierre`}</title>
+      <title>{`${pageTitle} | ${APP_TITLE}`}</title>
       {metaTags.map((metaTag: IMetaTag, index) => (
         <React.Fragment
           key={`${metaTag.id} ${index}`}

@@ -1,21 +1,15 @@
 import { NextPage } from 'next';
 import React from 'react';
+import Home from '@templates/Home';
+import PageHandler from '@shared/PageHandler';
+import { EPageType } from 'common/types/enums';
 
-import Button from '@atoms/Button';
-
-import { AppContext } from '../src/context/AppContext';
-
-const HomePage: NextPage = () => {
-  const { tvSchedule } = React.useContext(AppContext);
-
-  return (
-    <>
-      <h1>This is the homepage</h1>
-      <Button>
-        Test
-      </Button>
-    </>
-  );
-};
+const HomePage: NextPage = () => (
+  <PageHandler
+    title="Schedule"
+    Template={Home}
+    pageType={EPageType.Home}
+  />
+);
 
 export default HomePage;
