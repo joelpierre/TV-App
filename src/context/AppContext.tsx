@@ -2,7 +2,7 @@ import noop from 'lodash/noop';
 import React, { Dispatch, SetStateAction } from 'react';
 import { APP_TITLE } from 'common/utils/constants';
 import { ITvSchedule } from 'common/types/interfaces';
-import { fetchSchedule } from '../fetch/schedule';
+import { fetchSchedule } from '../fetch';
 import usePage from '@hooks/usePage';
 
 interface IAppContext {

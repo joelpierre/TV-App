@@ -1,0 +1,32 @@
+.Error {
+  padding: spacing(10) 0;
+
+  &__container {
+    @include max-width-container;
+    text-align: center;
+  }
+
+  &__heading {
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: spacing(3);
+  }
+
+  &__copy {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  &__link {
+    color: $color-brand;
+    text-decoration: underline;
+
+    @include hover-focus {
+      color: $color-brand;
+      text-decoration: none;
+    }
+  }
+}

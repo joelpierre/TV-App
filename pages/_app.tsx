@@ -7,7 +7,7 @@ import { ITvSchedule } from 'common/types/interfaces';
 import AppProvider from '../src/context/AppContext';
 import '../styles/global.scss';
 import { AnimatePresence } from 'framer-motion';
-import { fetchSchedule } from '../src/fetch/schedule';
+import { fetchSchedule } from '../src/fetch';
 
 interface IAppProps {
   tvSchedule: ITvSchedule[];
@@ -33,7 +33,6 @@ const App = ({ Component, pageProps, tvSchedule, router }: AppProps & IAppProps)
 
 App.getInitialProps = async ({ ctx, Component }): Promise<Partial<AppProps> & Partial<IAppProps>> => {
   const page = ctx?.query?.page as string || '1';
-
   const tvSchedule = await fetchSchedule(page);
 
   return {

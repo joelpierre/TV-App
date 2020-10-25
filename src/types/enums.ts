@@ -1,6 +1,7 @@
 /* eslint-disable */
 export enum EPageType {
   Home = '/',
+  Error404 = 'not-found',
   Show = 'show'
 }
 
