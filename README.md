@@ -55,6 +55,7 @@ In the event that someone `--no-verify`'s their git commit or git push to bypass
 - Used the font from the Sketch file.
 - Responsive... tested on Desktop/Tablet/Mobile (and via the simulator app via XCode).
 - Build pipeline and deployment using Vercel
+- Custom 404 page
 
 # Getting started
 
