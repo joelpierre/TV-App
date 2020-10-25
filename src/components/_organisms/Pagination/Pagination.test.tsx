@@ -15,39 +15,35 @@ const setup = (props = {}): RenderResult => {
   return render(<Pagination {...setupProps} />);
 };
 
-let nextRouterSpy;
 let useRouterSpy;
 let usePageSpy;
 
 describe('<Pagination/>', () => {
   let wrapper: RenderResult;
 
-  describe('Given on page 0', () => {
-    beforeEach(() => {
-      useRouterSpy = jest.spyOn(router, 'useRouter').mockReturnValueOnce({
-        query: {
-          page: '0'
-        }
-      } as unknown as router.NextRouter);
-      usePageSpy = jest.spyOn(hook, 'default').mockReturnValueOnce({
-        isFirstPage: true,
+  beforeEach(() => {
+    useRouterSpy = jest.spyOn(router, 'useRouter').mockReturnValueOnce({
+      query: {
         page: '0'
-      });
-      wrapper = setup();
+      }
+    } as unknown as router.NextRouter);
+    usePageSpy = jest.spyOn(hook, 'default').mockReturnValueOnce({
+      isToday: true,
+      page: '0'
     });
+    wrapper = setup();
+  });
 
-    it('Should render without crashing', () => {
-      expect(wrapper.container).not.toBeEmptyDOMElement();
-    });
+  it('Should render without crashing', () => {
+    expect(wrapper.container).not.toBeEmptyDOMElement();
+  });
 
-    it('should render next and prev buttons', () => {
-      expect(wrapper.getByText('View Next Day >')).toBeTruthy();
-      expect(wrapper.queryByText('< View Previous Day')).toBeFalsy();
-    });
+  it('should render next and prev buttons', () => {
+    expect(wrapper.getByTestId('next-link')).toBeTruthy();
+    expect(wrapper.getByTestId('prev-link')).toBeTruthy();
+  });
 
-    it('should', () => {
-      nextRouterSpy = jest.spyOn(router.default, 'push');
-
-    });
+  it('should match snapshot', () => {
+    expect(wrapper.asFragment()).toMatchSnapshot();
   });
 });

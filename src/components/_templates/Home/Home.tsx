@@ -14,18 +14,18 @@ interface IHomeProps {
 const Home: React.FunctionComponent<IHomeProps> = ({
   className
 }) => {
-  const { isFirstPage } = usePage();
+  const { isToday } = usePage();
 
   return (
     <div className={classNames(styles.Home, className)}>
-      {isFirstPage && (
+      {isToday && (
         <PageHero className={styles.Home__hero} />
       )}
       <Schedule
         className={classNames(styles.Home__schedule, {
-          [styles['Home__schedule--with-padding-top']]: !isFirstPage
+          [styles['Home__schedule--with-padding-top']]: !isToday
         })}
-        isFirstPage={isFirstPage}
+        isFirstPage={isToday}
       />
       <Pagination />
     </div>

@@ -19,14 +19,37 @@
     margin-bottom: spacing(3);
   }
 
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include breakpoint('md') {
+      flex-wrap: nowrap;
+    }
+  }
+
   &__cta {
     position: relative;
     margin-bottom: spacing(2);
     width: 100%;
+    background-color: $color-brand;
+    padding: spacing(2) spacing(3);
+    color: $color-tint-alpha;
+    font-weight: bold;
+    transition: background-color .4s;
 
-    @include breakpoint('md') {
+    @include breakpoint('sm') {
       margin: 0 spacing(2) 0;
+      min-width: 300px;
       width: auto;
+    }
+
+    @include hover-focus {
+      color: $color-tint-alpha;
+      text-decoration: none;
+      background-color: $color-alpha;
     }
   }
 }

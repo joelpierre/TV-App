@@ -29,7 +29,6 @@ module.exports = withSass({
   cssLoaderOptions: {
     namedExports: true,
     importLoaders: 1,
-    localIdentName: "[local]",
     outputStyle: 'compressed',
   },
 });

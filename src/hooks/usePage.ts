@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 export interface IUsePage {
   page: string;
-  isFirstPage: boolean;
+  isToday: boolean;
 }
 
 const usePage = (): IUsePage => {
@@ -12,15 +12,15 @@ const usePage = (): IUsePage => {
   React.useEffect(() => {
     setState({
       page: router?.query?.page as string,
-      isFirstPage
+      isToday
     });
   }, [router?.query]);
 
   const page = router?.query?.page as string || '0';
-  const isFirstPage = !page || page === '0';
+  const isToday = !page || page === '0';
   const [state, setState] = React.useState<IUsePage>({
     page,
-    isFirstPage
+    isToday
   });
 
   return state;
