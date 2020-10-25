@@ -1,20 +1,14 @@
 import React from 'react';
 import { render, RenderResult } from 'test-utils';
 
-import Button from './Button';
-
-const children = 'This is a test';
-
-const defaultProps = {
-  children
-};
+import Header from './Header';
 
 const setup = (props = {}): RenderResult => {
-  const setupProps = { ...defaultProps, ...props };
-  return render(<Button {...setupProps} />);
+  const setupProps = { ...props };
+  return render(<Header {...setupProps} />);
 };
 
-describe('<Button/>', () => {
+describe('<Header/>', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
@@ -25,8 +19,9 @@ describe('<Button/>', () => {
     expect(wrapper.container).not.toBeEmptyDOMElement();
   });
 
-  it('should contain children', () => {
-    expect(wrapper.container).toHaveTextContent(children);
+  it('should render logo', () => {
+    expect(wrapper.container.getElementsByTagName('img')).toHaveLength(1);
+    expect(wrapper.queryByTestId('logo')).toBeTruthy();
   });
 
   it('should match snapshot', () => {

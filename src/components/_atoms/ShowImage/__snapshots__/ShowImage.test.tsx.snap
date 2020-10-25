@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShowImage/> should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ShowImage"
+  >
+    <img
+      alt="Joel test poster"
+      class="ShowImage__image"
+      loading="lazy"
+      src="http://static.tvmaze.com/uploads/images/medium_portrait/130/325669.jpg"
+      width="200"
+    />
+  </div>
+</DocumentFragment>
+`;

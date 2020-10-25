@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header/> should match snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="Header"
+  >
+    <div
+      class="Header__container"
+    >
+      <a
+        class="Anchor"
+        href="/"
+      >
+        <img
+          alt="Logo for TV Maze"
+          class="Header__logo"
+          data-testid="logo"
+          loading="lazy"
+          src="/images/tvm-header-logo.png"
+          width="200"
+        />
+      </a>
+    </div>
+  </header>
+</DocumentFragment>
+`;

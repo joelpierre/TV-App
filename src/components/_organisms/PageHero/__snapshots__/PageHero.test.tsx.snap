@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageHero/> should match snapshot 1`] = `
+<DocumentFragment>
+  <article
+    class="PageHero"
+  >
+    <div
+      class="PageHero__container"
+    >
+      <div
+        class="PageHero__content"
+      >
+        <h1
+          class="PageHero__heading"
+        >
+          TV Bland
+        </h1>
+        <p
+          class="PageHero__copy"
+        >
+          TV Show and web series database.
+          <br />
+          Create personalised schedules. Episode guide, cast, crew and character information.
+        </p>
+      </div>
+    </div>
+  </article>
+</DocumentFragment>
+`;

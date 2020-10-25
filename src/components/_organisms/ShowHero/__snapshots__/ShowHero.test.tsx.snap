@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShowHero/> Given isOpen is false should match snapshot 1`] = `
+<DocumentFragment>
+  <article
+    class="ShowHero"
+  >
+    <div
+      class="ShowHero__container"
+    >
+      <a
+        class="Anchor ShowHero__link"
+        href="/"
+      >
+        &lt; Back to Schedule
+      </a>
+      <span
+        class="ShowHero__heading"
+      >
+        TV Bland
+      </span>
+      <div
+        class="ShowHero__content-wrapper"
+      >
+        <div
+          class="ShowHero__image-wrapper"
+        >
+          <div
+            class="ShowImage"
+          >
+            <img
+              alt="The Russell Howard Hour poster"
+              class="ShowImage__image"
+              loading="lazy"
+              src="http://static.tvmaze.com/uploads/images/medium_portrait/130/325669.jpg"
+              width="200"
+            />
+          </div>
+        </div>
+        <div
+          class="ShowHero__content"
+        >
+          <div
+            class="Ratings ShowHero__ratings"
+          >
+            <span
+              class="Star Ratings__star Star--is-active"
+            />
+            <span
+              class="Star Ratings__star Star--is-active"
+            />
+            <span
+              class="Star Ratings__star Star--is-active"
+            />
+            <span
+              class="Star Ratings__star Star--is-active"
+            />
+            <span
+              class="Star Ratings__star"
+            />
+            <span
+              class="Ratings__figures"
+              data-testid="figures"
+            >
+              4.2/5
+            </span>
+          </div>
+          <h1
+            class="ShowHero__show-title"
+          >
+            The Russell Howard Hour
+          </h1>
+          <div
+            class="ShowHero__copy ShowHero__copy--is-clamped"
+          >
+            <p>
+              <b>
+                The Russell Howard Hour
+              </b>
+               is a weekly talk show in which Russell Howard will be chatting with celebrity guests alongside comedy stand-up. 
+            </p>
+          </div>
+          <button
+            class="ShowHero__read-more"
+            data-testid="read-more"
+          >
+            Read more
+          </button>
+        </div>
+      </div>
+    </div>
+  </article>
+</DocumentFragment>
+`;

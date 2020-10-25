@@ -16,7 +16,7 @@ const Pagination: React.FunctionComponent<IPaginationProps> = ({
 }) => {
   const { page } = usePage();
   const { date } = getDateFromPage(page);
-  const currentPage = parseInt(page, 10) || 1;
+  const currentPage = parseInt(page, 10) || 0;
   const nextPage = currentPage + 1;
   const prevPage = currentPage - 1;
 
@@ -56,6 +56,7 @@ const Pagination: React.FunctionComponent<IPaginationProps> = ({
                 styles.Pagination__cta,
                 styles['Pagination__cta--prev']
               )}
+              data-testid="prev-button"
               onClick={onPrevClick}
             >
               {'<'} View Previous Day
@@ -68,6 +69,7 @@ const Pagination: React.FunctionComponent<IPaginationProps> = ({
               styles.Pagination__cta,
               styles['Pagination__cta--next']
             )}
+            data-testid="next-button"
             onClick={onNextClick}
           >
             View Next Day {'>'}

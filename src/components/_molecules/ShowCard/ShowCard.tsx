@@ -8,14 +8,13 @@ import { EPageHref, EPageType } from 'common/types/enums';
 import Ratings from '@molecules/Ratings';
 import ShowImage from '@atoms/ShowImage';
 
-interface IShowCardProps extends ITvSchedule {
+export interface IShowCardProps extends ITvSchedule {
   className?: string;
 }
 
 const ShowCard: React.FunctionComponent<IShowCardProps> = ({
   className,
   show,
-  airdate,
   airtime
 }) => {
   const {
@@ -25,7 +24,6 @@ const ShowCard: React.FunctionComponent<IShowCardProps> = ({
     rating: { average },
     network
   } = show || {};
-  const formattedDate = new Date(airdate).toLocaleDateString('en-US');
 
   return (
     <Anchor

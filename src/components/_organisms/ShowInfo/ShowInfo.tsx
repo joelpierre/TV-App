@@ -5,7 +5,7 @@ import styles from './ShowInfo.module.scss';
 import { ITvShow, ITvShowCast, ITvShowImage } from 'common/types/interfaces';
 import CastImage from '@atoms/CastImage';
 
-interface IShowInfoProps {
+export interface IShowInfoProps {
   className?: string;
   show: ITvShow;
 }
@@ -42,7 +42,7 @@ const ShowInfo: React.FunctionComponent<IShowInfoProps> = ({
     { heading: 'Streamed On', content: network?.name },
     { heading: 'Schedule', content: name },
     { heading: 'Status', content: status },
-    { heading: 'Genres', content: genres.join(', ') }
+    { heading: 'Genres', content: genres?.join(', ') }
   ];
 
   const castInfo = getCastInfo(_embedded?.cast);
@@ -55,13 +55,12 @@ const ShowInfo: React.FunctionComponent<IShowInfoProps> = ({
             Show Info
           </h2>
 
-          <table className={styles.ShowInfo__table}>
+          <table data-testid="show-info" className={styles.ShowInfo__table}>
             <tbody className={styles['ShowInfo__table-body']}>
               {showInfo.map((info, index) => {
                 if (!info.content) {
                   return null;
                 }
-
                 return (
                   <tr key={`${info} ${index}`} className={styles['ShowInfo__table-row']}>
                     <th className={styles['ShowInfo__table-heading']}>{info.heading}</th>
@@ -79,23 +78,21 @@ const ShowInfo: React.FunctionComponent<IShowInfoProps> = ({
               Starring
             </h2>
 
-            <table className={styles.ShowInfo__table}>
+            <table data-testid="show-cast" className={styles.ShowInfo__table}>
               <tbody className={`${styles['ShowInfo__table-body']} ${styles['ShowInfo__table-body--cast']}`}>
-                {castInfo.map((actor, index) => {
-                  return (
-                    <tr key={`${actor.realName} ${index}`} className={styles['ShowInfo__table-row']}>
-                      <td className={`${styles['ShowInfo__table-cell']} ${styles['ShowInfo__table-cell--image']}`}>
-                        <CastImage image={actor.image} name={actor.realName} />
-                      </td>
-                      <th className={styles['ShowInfo__table-heading']}>
-                        {actor.characterName}
-                        <span className={styles['ShowInfo__real-name']}>
-                          {actor.realName}
-                        </span>
-                      </th>
-                    </tr>
-                  );
-                })}
+                {castInfo.map((actor, index) => (
+                  <tr key={`${actor.realName} ${index}`} className={styles['ShowInfo__table-row']}>
+                    <td className={`${styles['ShowInfo__table-cell']} ${styles['ShowInfo__table-cell--image']}`}>
+                      <CastImage image={actor.image} name={actor.realName} />
+                    </td>
+                    <th className={styles['ShowInfo__table-heading']}>
+                      {actor.characterName}
+                      <span className={styles['ShowInfo__real-name']}>
+                        {actor.realName}
+                      </span>
+                    </th>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

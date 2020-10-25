@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Ratings/> should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Ratings"
+  >
+    <span
+      class="Star Ratings__star Star--is-active"
+    />
+    <span
+      class="Star Ratings__star Star--is-active"
+    />
+    <span
+      class="Star Ratings__star"
+    />
+    <span
+      class="Star Ratings__star"
+    />
+    <span
+      class="Star Ratings__star"
+    />
+  </div>
+</DocumentFragment>
+`;

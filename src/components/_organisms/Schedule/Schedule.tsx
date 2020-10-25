@@ -36,19 +36,21 @@ const Schedule: React.FunctionComponent<IScheduleProps> = ({
           </span>
         </h2>
 
-        <ul className={styles.Schedule__list}>
-          {tvSchedule && tvSchedule.map((scheduleItem, index) => (
-            <li
-              key={`${scheduleItem.id} ${index}`}
-              className={styles.Schedule__item}
-            >
-              <ShowCard
-                className={styles.Schedule__card}
-                {...scheduleItem}
-              />
-            </li>
-          ))}
-        </ul>
+        {tvSchedule.length > 0 && (
+          <ul data-testid="schedule-list" className={styles.Schedule__list}>
+            {tvSchedule.map((scheduleItem, index) => (
+              <li
+                key={`${scheduleItem.id} ${index}`}
+                className={styles.Schedule__item}
+              >
+                <ShowCard
+                  className={styles.Schedule__card}
+                  {...scheduleItem}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </article>
   );

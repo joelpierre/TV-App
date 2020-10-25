@@ -1,20 +1,14 @@
 import React from 'react';
 import { render, RenderResult } from 'test-utils';
 
-import Button from './Button';
-
-const children = 'This is a test';
-
-const defaultProps = {
-  children
-};
+import Star from './Star';
 
 const setup = (props = {}): RenderResult => {
-  const setupProps = { ...defaultProps, ...props };
-  return render(<Button {...setupProps} />);
+  const setupProps = { ...props };
+  return render(<Star {...setupProps} />);
 };
 
-describe('<Button/>', () => {
+describe('<Star/>', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
@@ -23,10 +17,6 @@ describe('<Button/>', () => {
 
   it('Should render without crashing', () => {
     expect(wrapper.container).not.toBeEmptyDOMElement();
-  });
-
-  it('should contain children', () => {
-    expect(wrapper.container).toHaveTextContent(children);
   });
 
   it('should match snapshot', () => {

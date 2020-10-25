@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer/> should match snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="Footer"
+  >
+    <div
+      class="Footer__container"
+    >
+      <p
+        class="Footer__copy"
+      >
+        Created by Joel Pierre, 2020 |
+        <a
+          class="Footer__link"
+          href="https://github.com/joelpierre"
+        >
+          https://github.com/joelpierre
+        </a>
+      </p>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

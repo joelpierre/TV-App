@@ -5,7 +5,7 @@ import { ITvSchedule } from 'common/types/interfaces';
 import { fetchSchedule } from '../fetch';
 import usePage from '@hooks/usePage';
 
-interface IScheduleContext {
+export interface IScheduleContext {
   appTitle: string;
   tvSchedule: ITvSchedule[];
   setTvSchedule: Dispatch<SetStateAction<any>>;

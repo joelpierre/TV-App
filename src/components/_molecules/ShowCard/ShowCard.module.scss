@@ -1,19 +1,23 @@
 .ShowCard {
   $root: &;
+  display: block;
   width: 100%;
   background-color: $color-tint-alpha;
 
   @include hover-focus {
     text-decoration: none;
+    color: $color-brand;
 
-    #{$root}__heading {
-      text-decoration: underline;
+    #{$root}__content {
+      border-bottom-color: $color-brand;
     }
   }
 
   &__content {
     display: flex;
     flex-direction: column-reverse;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color .4s;
   }
 
   &__heading {
@@ -52,5 +56,11 @@
     @include breakpoint('sm') {
       display: block;
     }
+  }
+
+  &__copy,
+  &__meta,
+  &__heading {
+    transition: color .4s;
   }
 }

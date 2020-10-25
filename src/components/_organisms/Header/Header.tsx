@@ -17,6 +17,7 @@ const Header: React.FunctionComponent<IFooterProps> = ({
       <div className={styles.Header__container}>
         <Anchor href={EPageHref.Home} as="/">
           <img
+            data-testid="logo"
             className={styles.Header__logo}
             src="/images/tvm-header-logo.png"
             alt="Logo for TV Maze"

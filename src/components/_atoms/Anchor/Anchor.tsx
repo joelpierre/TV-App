@@ -5,13 +5,13 @@ import classNames from 'classnames';
 import styles from './Anchor.module.scss';
 import { EPageHref } from 'common/types/enums';
 
-interface ILinkProps {
+export interface IAnchorProps {
   className?: string;
   href: EPageHref;
   as: string;
 }
 
-const Anchor: React.FunctionComponent<ILinkProps> = ({
+const Anchor: React.FunctionComponent<IAnchorProps> = ({
   className,
   href,
   as,

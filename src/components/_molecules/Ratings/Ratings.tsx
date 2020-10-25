@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import styles from './Ratings.module.scss';
 import Star from '@atoms/Star';
 
-interface IRatingsProps {
+export interface IRatingsProps {
   className?: string;
   averageRating: number | null;
   withFigures?: boolean;
@@ -27,7 +27,7 @@ const Ratings: React.FunctionComponent<IRatingsProps> = ({
       })}
 
       {withFigures && (
-        <span className={styles.Ratings__figures}>
+        <span className={styles.Ratings__figures} data-testid="figures">
           {ratingOutOfFive === 0 ? '(no rating)' : `${ratingOutOfFive.toFixed(1)}/5`}
         </span>
       )}

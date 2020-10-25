@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShowInfo/> Default State should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ShowInfo"
+  >
+    <div
+      class="ShowInfo__container"
+    >
+      <div
+        class="ShowInfo__details"
+      >
+        <h2
+          class="ShowInfo__heading"
+        >
+          Show Info
+        </h2>
+        <table
+          class="ShowInfo__table"
+          data-testid="show-info"
+        >
+          <tbody
+            class="ShowInfo__table-body"
+          >
+            <tr
+              class="ShowInfo__table-row"
+            >
+              <th
+                class="ShowInfo__table-heading"
+              >
+                Streamed On
+              </th>
+              <td
+                class="ShowInfo__table-cell"
+              >
+                Sky 1
+              </td>
+            </tr>
+            <tr
+              class="ShowInfo__table-row"
+            >
+              <th
+                class="ShowInfo__table-heading"
+              >
+                Schedule
+              </th>
+              <td
+                class="ShowInfo__table-cell"
+              >
+                The Russell Howard Hour
+              </td>
+            </tr>
+            <tr
+              class="ShowInfo__table-row"
+            >
+              <th
+                class="ShowInfo__table-heading"
+              >
+                Status
+              </th>
+              <td
+                class="ShowInfo__table-cell"
+              >
+                Running
+              </td>
+            </tr>
+            <tr
+              class="ShowInfo__table-row"
+            >
+              <th
+                class="ShowInfo__table-heading"
+              >
+                Genres
+              </th>
+              <td
+                class="ShowInfo__table-cell"
+              >
+                Comedy
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="ShowInfo__cast"
+      >
+        <h2
+          class="ShowInfo__heading ShowInfo__heading--cast"
+        >
+          Starring
+        </h2>
+        <table
+          class="ShowInfo__table"
+          data-testid="show-cast"
+        >
+          <tbody
+            class="ShowInfo__table-body ShowInfo__table-body--cast"
+          >
+            <tr
+              class="ShowInfo__table-row"
+            >
+              <td
+                class="ShowInfo__table-cell ShowInfo__table-cell--image"
+              >
+                <div
+                  class="CastImage"
+                >
+                  <img
+                    alt="Russell Howard image"
+                    class="CastImage__image"
+                    loading="lazy"
+                    src="http://static.tvmaze.com/uploads/images/medium_portrait/175/437607.jpg"
+                    width="58"
+                  />
+                </div>
+              </td>
+              <th
+                class="ShowInfo__table-heading"
+              >
+                Host
+                <span
+                  class="ShowInfo__real-name"
+                >
+                  Russell Howard
+                </span>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

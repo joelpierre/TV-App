@@ -9,7 +9,7 @@ import Anchor from '@atoms/Anchor';
 import { EPageHref } from 'common/types/enums';
 import useToggle from '@hooks/useToggle';
 
-interface IShowHeroProps {
+export interface IShowHeroProps {
   className?: string;
   show: ITvShow;
 }
@@ -48,7 +48,11 @@ const ShowHero: React.FunctionComponent<IShowHeroProps> = ({
               })}
               dangerouslySetInnerHTML={{ __html: summary }}
             />
-            <button className={styles['ShowHero__read-more']} onClick={setIsOpen}>
+            <button
+              data-testid={isOpen ? 'read-less' : 'read-more'}
+              className={styles['ShowHero__read-more']}
+              onClick={setIsOpen}
+            >
               {isOpen ? 'Read less' : 'Read more'}
             </button>
           </div>

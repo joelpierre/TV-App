@@ -1,20 +1,14 @@
 import React from 'react';
 import { render, RenderResult } from 'test-utils';
 
-import Button from './Button';
-
-const children = 'This is a test';
-
-const defaultProps = {
-  children
-};
+import PageHero from './PageHero';
 
 const setup = (props = {}): RenderResult => {
-  const setupProps = { ...defaultProps, ...props };
-  return render(<Button {...setupProps} />);
+  const setupProps = { ...props };
+  return render(<PageHero {...setupProps} />);
 };
 
-describe('<Button/>', () => {
+describe('<PageHero/>', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
@@ -25,8 +19,8 @@ describe('<Button/>', () => {
     expect(wrapper.container).not.toBeEmptyDOMElement();
   });
 
-  it('should contain children', () => {
-    expect(wrapper.container).toHaveTextContent(children);
+  it('should render a H1 tag', () => {
+    expect(wrapper.container.getElementsByTagName('h1')).toHaveLength(1);
   });
 
   it('should match snapshot', () => {

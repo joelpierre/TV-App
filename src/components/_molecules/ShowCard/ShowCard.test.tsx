@@ -1,20 +1,19 @@
 import React from 'react';
 import { render, RenderResult } from 'test-utils';
 
-import Button from './Button';
+import ShowCard, { IShowCardProps } from './ShowCard';
+import { MockShowCard } from '@molecules/ShowCard/__mocks__/MockShowCard';
 
-const children = 'This is a test';
-
-const defaultProps = {
-  children
+const defaultProps: IShowCardProps = {
+  ...MockShowCard
 };
 
-const setup = (props = {}): RenderResult => {
+const setup = (props: Partial<IShowCardProps> = {}): RenderResult => {
   const setupProps = { ...defaultProps, ...props };
-  return render(<Button {...setupProps} />);
+  return render(<ShowCard {...setupProps} />);
 };
 
-describe('<Button/>', () => {
+describe('<ShowCard/>', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
@@ -23,10 +22,6 @@ describe('<Button/>', () => {
 
   it('Should render without crashing', () => {
     expect(wrapper.container).not.toBeEmptyDOMElement();
-  });
-
-  it('should contain children', () => {
-    expect(wrapper.container).toHaveTextContent(children);
   });
 
   it('should match snapshot', () => {
