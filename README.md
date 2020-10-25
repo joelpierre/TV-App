@@ -6,7 +6,7 @@ To view a live demo please visit here https://tv-maze-app.vercel.app
 - NextJS (with a custom API)
 - Jest + React Testing Library
 - ESLint
-- SASS using SASS Modules
+- SASS using SASS Modules + Autoprefixer and PostCSS
 - TypeScript (v4+)
 - Webpack
 - Circle CI
@@ -35,16 +35,26 @@ I used SASS modules + BEM (Block element modifier). I have used many naming conv
 ## Other Notable mentions
 
 #### TypeScript
+
 TypeScript makes developing a dream, finding errors at compile time rather than build time, and the ability to type props, methods etc takes the guess work out. Creating this app I pre-made the interfaces for the API I was working with which meant developing the app was a breeze.
 
 #### ESLint
+
 Because who doesn't want to make sure they are sticking to some form of convention!? And who doesn't want their IDE to let them know they may have made a mistake with a shadowed variable or a variable name!? 😉
 
 #### Lint Staged + Husky
+
 Lint staged is perfect for every project, on commit and/or on push we can run commands dependent on file types etc. In this project I lint my ts/tsx files, and I also use imagemin to reduce the size of the image files added to the project so before I push anything to github I know it has passed a vast amount of checks.
 
 #### Circle CI
+
 In the event that someone `--no-verify`'s their git commit or git push to bypass the checks, I set this repo up with CircleCI. The workflow I created Lints the code, Runs the tests and builds the application. Great for when you need teams create PR's as the other members have confidence the apps structural integrity given the incoming changes. (it isn't all 100% however pretesting before even pushing to staging is always great).
+
+# Extras
+- Image optimisations: Compressing images on git commit/push, lazy loading images via attribute. Ensuring that we don't have massive page shifts on load by rendering the correct image containers on an initial render.
+- Used the font from the Sketch file.
+- Responsive... tested on Desktop/Tablet/Mobile (and via the simulator app via XCode).
+- Build pipeline and deployment using Vercel
 
 # Getting started
 
