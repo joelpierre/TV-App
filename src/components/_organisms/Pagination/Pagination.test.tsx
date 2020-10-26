@@ -42,8 +42,4 @@ describe('<Pagination/>', () => {
     expect(wrapper.getByTestId('next-link')).toBeTruthy();
     expect(wrapper.getByTestId('prev-link')).toBeTruthy();
   });
-
-  it('should match snapshot', () => {
-    expect(wrapper.asFragment()).toMatchSnapshot();
-  });
 });
