@@ -20,3 +20,5 @@ export const getDateFromPage = (pageFromQuery: string): IDateFromPage => {
     date: date?.toDateString()
   };
 };
+
+export const removeProtocolFromImageLink = (link: string) => link?.replace('http:', '');

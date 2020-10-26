@@ -110,7 +110,7 @@ exports[`<ShowInfo/> Default State should match snapshot 1`] = `
                     alt="Russell Howard image"
                     class="CastImage__image"
                     loading="lazy"
-                    src="http://static.tvmaze.com/uploads/images/medium_portrait/175/437607.jpg"
+                    src="//static.tvmaze.com/uploads/images/medium_portrait/175/437607.jpg"
                     width="58"
                   />
                 </div>

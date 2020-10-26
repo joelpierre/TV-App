@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { ITvShowImage } from 'common/types/interfaces';
 
 import styles from './CastImage.module.scss';
+import { removeProtocolFromImageLink } from 'common/utils/index';
 
 export interface ICastImageProps {
   className?: string;
@@ -23,7 +24,7 @@ const CastImage: React.FunctionComponent<ICastImageProps> = ({
     })}>
       {imageSrc && (
         <img
-          src={imageSrc}
+          src={removeProtocolFromImageLink(imageSrc)}
           className={styles.CastImage__image}
           alt={`${name} image`}
           width={58}

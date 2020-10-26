@@ -9,7 +9,7 @@ exports[`<ShowImage/> should match snapshot 1`] = `
       alt="Joel test poster"
       class="ShowImage__image"
       loading="lazy"
-      src="http://static.tvmaze.com/uploads/images/medium_portrait/130/325669.jpg"
+      src="//static.tvmaze.com/uploads/images/medium_portrait/130/325669.jpg"
       width="200"
     />
   </div>

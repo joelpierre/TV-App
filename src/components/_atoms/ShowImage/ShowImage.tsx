@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { ITvShowImage } from 'common/types/interfaces';
 
 import styles from './ShowImage.module.scss';
+import { removeProtocolFromImageLink } from 'common/utils/index';
 
 export interface IShowImageProps {
   className?: string;
@@ -23,7 +24,7 @@ const ShowImage: React.FunctionComponent<IShowImageProps> = ({
     })}>
       {imageSrc && (
         <img
-          src={imageSrc}
+          src={removeProtocolFromImageLink(imageSrc)}
           className={styles.ShowImage__image}
           alt={`${name} poster`}
           width={200}
