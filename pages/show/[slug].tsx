@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       tvShow
     },
-    revalidate: 1
+    revalidate: 3
   };
 };
 

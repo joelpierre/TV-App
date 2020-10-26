@@ -51,6 +51,7 @@ Lint staged is perfect for every project, on commit and/or on push we can run co
 In the event that someone `--no-verify`'s their git commit or git push to bypass the checks, I set this repo up with CircleCI. The workflow I created Lints the code, Runs the tests and builds the application. Great for when you need teams create PR's as the other members have confidence the apps structural integrity given the incoming changes. (it isn't all 100% however pretesting before even pushing to staging is always great).
 
 # Extras
+- Used Atomic design principles and created a component library to support this (atoms, molecules, organisms, templates etc).
 - Image optimisations: Compressing images on git commit/push, lazy loading images via attribute. Ensuring that we don't have massive page shifts on load by rendering the correct image containers on an initial render.
 - Used the font from the Sketch file.
 - Responsive... tested on Desktop/Tablet/Mobile (and via the simulator app via XCode).

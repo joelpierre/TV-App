@@ -39,10 +39,6 @@ describe('<Schedule/>', () => {
     it('should render the tvSchedule list', () => {
       expect(wrapper.getByTestId('schedule-list')).not.toBeEmptyDOMElement();
     });
-
-    it('should match snapshot', () => {
-      expect(wrapper.asFragment()).toMatchSnapshot();
-    });
   });
 
   describe('Given TV Schedule is empty array', () => {

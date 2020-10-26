@@ -4,6 +4,7 @@ import { APP_TITLE } from 'common/utils/constants';
 import { ITvSchedule } from 'common/types/interfaces';
 import { fetchSchedule } from '../fetch';
 import usePage from '@hooks/usePage';
+import useIsMounted from '@hooks/useIsMounted';
 
 export interface IScheduleContext {
   appTitle: string;
@@ -23,11 +24,14 @@ const ScheduleProvider: React.FunctionComponent<Partial<Pick<IScheduleContext, '
   children,
   tvSchedule: schedule = []
 }) => {
+  const isMounted = useIsMounted();
   const { page } = usePage();
   const [tvSchedule, setTvSchedule] = React.useState<ITvSchedule[]>(schedule);
 
   const asyncGetTvSchedule = async (currentPage: string) => {
-    setTvSchedule(await fetchSchedule(currentPage));
+    if (isMounted.current) {
+      setTvSchedule(await fetchSchedule(currentPage));
+    }
   };
 
   React.useEffect(() => {
@@ -35,7 +39,9 @@ const ScheduleProvider: React.FunctionComponent<Partial<Pick<IScheduleContext, '
   }, [page]);
 
   const setSchedule = (nextSchedule) => {
-    setTvSchedule(nextSchedule);
+    if (isMounted.current) {
+      setTvSchedule(nextSchedule);
+    }
   };
 
   return (

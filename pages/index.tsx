@@ -1,11 +1,11 @@
-import { NextPage, NextPageContext } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import React from 'react';
 import Home from '@templates/Home';
 import PageHandler from '@shared/PageHandler';
 import { EPageType } from 'common/types/enums';
-import { fetchSchedule } from '../src/fetch';
 import ScheduleProvider from '../src/context/ScheduleContext';
 import { ITvSchedule } from 'common/types/interfaces';
+import { fetchSchedule } from '../src/fetch';
 
 interface IHomePageProps {
   tvSchedule: ITvSchedule[];
@@ -23,11 +23,13 @@ const HomePage: NextPage<IHomePageProps> = ({ tvSchedule }) => {
   );
 };
 
-HomePage.getInitialProps = async ({ query }: NextPageContext) => {
+export const getServerSideProps: GetServerSideProps<IHomePageProps> = async ({ query }) => {
   const page = Array.isArray(query?.page) ? query?.page[0] : query?.page;
   const tvSchedule = await fetchSchedule(page);
   return {
-    tvSchedule
+    props: {
+      tvSchedule
+    }
   };
 };
 
